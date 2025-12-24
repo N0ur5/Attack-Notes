@@ -2,4 +2,5 @@
 
 ## Files:
 `emailTemplate.html` - Basic HTML email template\
-`iCalendar.ics` - Basic Calendar invite template
+`iCalendar.ics` - Basic Calendar invite template\
+`sendingEmail.txt` - Different methods for sending email
