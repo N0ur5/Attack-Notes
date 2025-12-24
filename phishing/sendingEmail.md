@@ -1,8 +1,8 @@
-##### Using the `sendmail` client
+##### Using the `sendEmail` client
 
 `sendEmail -s 192.168.50.121 -t victim@bar.com -f attacker@foo.com -u "test"  -o message-content-type=html -o message-file=./template.html -a iCalendar.ics`
 
-##### Using Telnet
+##### Using `Telnet`
 
 ```
 telnet <server_address> <port>
