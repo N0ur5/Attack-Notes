@@ -1,0 +1,37 @@
+id: redhat-satellite-pub-dirlisting
+
+info:
+  name: Satellite/Foreman - Exposed /pub and /pub/ks Directory Listing
+  author: N0ur5
+  severity: medium
+  description: |
+    Detects exposed Apache-style directory listings on /pub/ and /pub/ks/ commonly seen on
+    Red Hat Satellite/Foreman/Katello provisioning endpoints.
+  tags: redhat,satellite,foreman,katello,exposure,dirlisting,provisioning,kickstart
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/pub/"
+      - "{{BaseURL}}/pub/ks/"
+
+    redirects: true
+    max-redirects: 2
+
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        condition: or
+        words:
+          - "<title>Index of /pub</title>"
+          - "<title>Index of /pub/</title>"
+          - "<title>Index of /pub/ks</title>"
+          - "<title>Index of /pub/ks/</title>"
+        case-insensitive: true
