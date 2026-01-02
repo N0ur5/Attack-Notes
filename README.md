@@ -1,6 +1,6 @@
 # Table of Contents
 
-* `CVES` - Exploits & related notes for exploitable vulns. 
+* `CVES` - Exploits & related notes for exploitable CVE-specific vulns. 
 * `commandControl` - Operations within C2 Frameworks. 
   *  `/msf` - Operations with msfvenom/Metasploit. 
 * `macrosVBAs` - VBA/Macro Frameworks/Examples.
